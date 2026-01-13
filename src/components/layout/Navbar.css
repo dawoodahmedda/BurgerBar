@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffcb05; /* warm restaurant color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.navbar ul li:hover {
+  color: #d1451b; /* accent hover color */
+}
+
+.navbar div button {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.navbar div button:hover {
+  background-color: #f0f0f0;
+}
