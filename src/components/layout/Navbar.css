@@ -1,42 +1,85 @@
 .navbar {
+  position: absolute; /* over background */
+  top: 8%;            /* vertical position */
+  left: 25%;           /* horizontal offset */
+  transform: translateX(-50%); /* horizontal center adjustment */
+  
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* menu on right, buttons on left */
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffcb05; /* warm restaurant color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
+
+  width: 80%;  /* navbar width */
+  max-width: 1200px;
+
+  padding: 0;
+  background: transparent;
+  color: yellow;
+  font-family: sans-serif;
+  z-index: 2;
 }
 
+/* Menu items (shifted to the right) */
 .navbar ul {
   display: flex;
+  gap: 25px;
   list-style: none;
-  gap: 2rem;
   margin: 0;
   padding: 0;
+
+  margin-left: auto; /* pushes menu items to the right */
 }
 
+/* Menu link styling with underline effect */
 .navbar ul li {
   cursor: pointer;
   font-weight: bold;
-  transition: color 0.2s;
+  font-size: 18px;
+  
+  position: relative; /* needed for underline */
+  transition: color 0.3s ease;
 }
 
+/* Hover color change */
 .navbar ul li:hover {
-  color: #d1451b; /* accent hover color */
+  color: white;
 }
 
+/* Underline animation */
+.navbar ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distance from text */
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navbar ul li:hover::after {
+  width: 100%; /* underline expands on hover */
+}
+
+/* Language buttons (stay in place on left) */
+.navbar div {
+  display: flex;
+  gap: 10px;
+  margin-left: 90px; /* adjust spacing */
+}
+
+/* Language buttons styling */
 .navbar div button {
-  margin-left: 0.5rem;
-  padding: 0.3rem 0.7rem;
-  border: none;
-  background-color: #fff;
-  border-radius: 5px;
+  background: none;
+  border: 2px solid yellow;
+  color: yellow;
+  padding: 5px 12px;
   cursor: pointer;
+  border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
 }
 
 .navbar div button:hover {
-  background-color: #f0f0f0;
+  background: yellow;
+  color: black;
 }

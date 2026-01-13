@@ -2,14 +2,18 @@
 import React from "react";
 import "./Navbar.css";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onNavClick: (section: string) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
   return (
     <nav className="navbar">
       <ul>
-        <li>Home</li>
-        <li>Menu</li>
-        <li>Gallery</li>
-        <li>Contact</li>
+        <li onClick={() => onNavClick("Home")}>Home</li>
+        <li onClick={() => onNavClick("Menu")}>Menu</li>
+        <li onClick={() => onNavClick("Gallery")}>Gallery</li>
+        <li onClick={() => onNavClick("Contact")}>Contact</li>
       </ul>
       <div>
         <button>IT</button>
