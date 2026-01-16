@@ -1,40 +1,53 @@
-/* Container with rotating background */
 .app-container {
   width: 100%;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  display: flex;
-  flex-direction: column;
-  transition: background-image 1s ease-in-out; /* smooth fade */
-  position: relative; /* for navbar positioning */
+  z-index: -1;
 }
 
-/* Section content wrapper */
-.section-content {
+section {
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  color: white;
   text-align: center;
-  color: yellow;
-  padding-top: 150px; /* leave space for navbar at the top */
-  flex: 1;
 }
 
-/* Home section styling */
-.home-section h1 {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* subtle shadow for readability */
+.menu-section,
+.gallery-section,
+.contact-section {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  margin-bottom: 10px;
 }
 
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .home-section h1 {
-    font-size: 2.5rem;
-  }}
+.footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+  margin-top: 10px;
+}

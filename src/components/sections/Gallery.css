@@ -1,0 +1,114 @@
+/* Gallery Section */
+.gallery-section {
+  width: 100%;
+  padding: 60px 80px;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-container {
+  display: flex;
+  max-width: 1400px;
+  width: 100%;
+  gap: 50px;
+  flex-wrap: wrap; /* allows text + images */
+}
+
+/* Left side: text */
+.gallery-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.gallery-left h2.gallery-title {
+  font-size: 42px;
+  color: #ffcc00;
+  margin-bottom: 25px;
+}
+
+.gallery-left p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.gallery-left .highlight {
+  font-weight: bold;
+  color: #ffcc00;
+  margin-top: 20px;
+}
+
+/* Right side: images grid */
+.gallery-right {
+  flex: 1;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 180px;
+  gap: 15px;
+}
+
+.gallery-right img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-right img:hover {
+  transform: scale(1.05);
+}
+
+/* Make 5th image larger */
+.gallery-right img.large-img {
+  grid-column: 1 / span 2; /* spans both columns */
+  grid-row: span 1.5; /* taller than others */
+  height: 200px; /* adjust height to look bigger */
+}
+
+/* Responsive Layouts */
+@media (max-width: 1024px) {
+  .gallery-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .gallery-right {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+  }
+
+  .gallery-right img.large-img {
+    grid-column: 1 / span 2;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 40px 20px;
+  }
+
+  .gallery-left h2.gallery-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .gallery-left p,
+  .gallery-left .highlight {
+    text-align: center;
+  }
+
+  .gallery-right {
+    grid-template-columns: 1fr; /* single column on mobile */
+    grid-auto-rows: 180px;
+  }
+
+  .gallery-right img.large-img {
+    grid-column: 1;
+    height: 250px;
+  }
+}

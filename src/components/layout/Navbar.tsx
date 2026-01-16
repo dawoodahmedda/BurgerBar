@@ -1,20 +1,27 @@
-// src/components/layout/Navbar.tsx
 import React from "react";
 import "./Navbar.css";
 
-interface NavbarProps {
-  onNavClick: (section: string) => void;
-}
+const Navbar: React.FC = () => {
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
   return (
     <nav className="navbar">
       <ul>
-        <li onClick={() => onNavClick("Home")}>Home</li>
-        <li onClick={() => onNavClick("Menu")}>Menu</li>
-        <li onClick={() => onNavClick("Gallery")}>Gallery</li>
-        <li onClick={() => onNavClick("Contact")}>Contact</li>
+        <li onClick={() => scrollTo("hero")}>Home</li>
+        <li onClick={() => scrollTo("menu")}>Menu</li>
+        <li onClick={() => scrollTo("gallery")}>Who We Are</li>
+        <li onClick={() => scrollTo("locate")}>Locate Us</li>
+        <li onClick={() => scrollTo("contact")}>Contact Us</li>
+
+               
+
       </ul>
+
       <div>
         <button>IT</button>
         <button>EN</button>

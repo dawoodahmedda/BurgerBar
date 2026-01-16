@@ -1,73 +1,41 @@
 .navbar {
-  position: absolute; /* over background */
-  top: 8%;            /* vertical position */
-  left: 25%;           /* horizontal offset */
-  transform: translateX(-50%); /* horizontal center adjustment */
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between; /* menu on right, buttons on left */
+  justify-content: space-between;
   align-items: center;
-
-  width: 80%;  /* navbar width */
-  max-width: 1200px;
-
-  padding: 0;
-  background: transparent;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.8);
   color: yellow;
-  font-family: sans-serif;
-  z-index: 2;
+  z-index: 1000;
 }
 
-/* Menu items (shifted to the right) */
 .navbar ul {
   display: flex;
   gap: 25px;
   list-style: none;
   margin: 0;
   padding: 0;
-
-  margin-left: auto; /* pushes menu items to the right */
 }
 
-/* Menu link styling with underline effect */
 .navbar ul li {
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
-  
-  position: relative; /* needed for underline */
   transition: color 0.3s ease;
 }
 
-/* Hover color change */
 .navbar ul li:hover {
   color: white;
 }
 
-/* Underline animation */
-.navbar ul li::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px; /* distance from text */
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: width 0.3s ease;
-}
-
-.navbar ul li:hover::after {
-  width: 100%; /* underline expands on hover */
-}
-
-/* Language buttons (stay in place on left) */
 .navbar div {
   display: flex;
   gap: 10px;
-  margin-left: 90px; /* adjust spacing */
 }
 
-/* Language buttons styling */
 .navbar div button {
   background: none;
   border: 2px solid yellow;
@@ -76,10 +44,4 @@
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.navbar div button:hover {
-  background: yellow;
-  color: black;
 }
